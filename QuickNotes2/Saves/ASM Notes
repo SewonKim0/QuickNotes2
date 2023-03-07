@@ -1,0 +1,27 @@
+CISC: Complex instruction set computer
+Intel x86-64
+
+C -(compile)> asm -(assembler)> obj
+	Linker & static libs, execute
+	Dissassembly: obj->ASM
+CPU
+	PC: Next instruction location
+	16 registers
+	Condition code registers
+Memory
+	Obj code program data (instructions, data)
+
+Register (r8, e4), cmd(b1 w2, l4, q8, s, z)
+	function(rdi, rsi, rdx) -> rax
+		(rax) //dereference
+		offset(arr, index, sizeof) //arr access
+	call <func>, jmp <label>, ret
+		je, jne, jl, jle, jg, jge
+	movq <source> <dest>, leaq
+		leaq operations
+	push <val>, pop <reg>, sub <bytes> %rsp
+	cmp <compareTo> <compare> -> (compare - compareTo)
+		Flags: ZF(==0) SF(<0) CF(unsign overflow) OF(sign overflow)
+
+	r vs e: r for address instructions
+	Var malleability, compile/split lines

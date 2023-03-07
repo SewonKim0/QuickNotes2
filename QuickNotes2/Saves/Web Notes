@@ -1,0 +1,58 @@
+Internet: Network of computer networks
+	Centralized, decentralized, distributed
+	Packet switching: split data, reassemble at endpt
+	Router: Networking device, relays data packets
+		Internet protocol(IP): Address to send data
+	Net Neutrality: Same access to all
+Web: Portion of internet (http, https)
+Cloud: Clusters of servers
+Digital Media: Binary sent through network
+	html, css, js, SVG, WOFF
+
+Operating System: Software to manage computer's resources, allocate memory, IO, connections
+	GUI vs CLI (cmd line interface)
+Unix: ls, pwd, cd <newDir>
+	ls -l -a, cp <file> <dest>, rm <file>, open
+	chmod <permcode> <file>
+		r, w, x, - | u, g, o
+	pico <file>, nano
+
+html (hypertext markup lang)
+	<html lang="en"> <meta charset="utf-8"> <!-- Comment -->
+		title, id, class
+	<h1-6>, <p>, <breakquote>, <br> <hr>
+
+	<img src width height alt>
+		png, jpg, gif, webP, svg
+	<a href>
+		# (null), #ID, relUrl#ID
+
+	<table>: <tr>(row) <th>(header) <td>(data)
+		<ol>: <li> //ordered
+		<ul>: <li> //unordered
+		<dl>: <dt> <dd> //key:value list
+	<header> <nav> <main> <footer> <figure> <figcaption> <aside> <article> <section> <div> <span>
+
+css3 (cascading style sheets)
+	<link rel="stylesheet" href="<cssfile>">	<style> css </style>
+	style="property:value;"	
+
+	 Inheritance, Specificity, Location
+	Display: Inline, block, flex, inline-flex
+		flex-direction, justify-content, align-items
+	Position: Static, abs, rel, fixed, sticky
+		left, z-index
+	Margin, Border, Padding, Content
+		border: thickness solid color;
+	float: left; | clear: left;
+
+	Color: rgb(0, 0, 0), #hex, hsl(hue, sat%, light%)
+	Font: font-family, font-size
+
+Raster Graphics (jpg, png, gif, webp, avif)
+	<img srcset=img1 480w, img2 1.5x>
+
+	<picture>
+		<source srcset="img.webp" type="image/webp"> //auxillary formats
+
+Vector Graphics (XML markup lang) .svg
