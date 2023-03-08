@@ -53,6 +53,30 @@ Raster Graphics (jpg, png, gif, webp, avif)
 	<img srcset=img1 480w, img2 1.5x>
 
 	<picture>
+		<img>
 		<source srcset="img.webp" type="image/webp"> //auxillary formats
 
-Vector Graphics (XML markup lang) .svg
+Vector Graphics (XML extensive markup lang) .svg
+	No resolutions (scalable), rasterized client side, custom tags
+	<svg viewBox="x1 y1 x2 y2">
+		<rect x="x1" y="y1" width height fill opacity />
+		<circle cx cy r fill opacity />
+		<polygon points="x1,y1, x2,y2" fill opacity />
+		<line x1 y1 x2 y2 stroke="Color" stroke-width />
+		<text x y fill font-family font-size> Text </text>
+
+		<g> //container
+			<defs>
+				<linearGradient id>
+					<stop offset="0%" stop-color />
+					<stop offset="100%" stop-color />
+				</linearGradient>
+			</defs>
+		</g>
+			fill="url(#id)" //apply gradient
+		</g>
+	<img src="svgPath">
+	or paste svg code into <body>
+		css: rect:hover, rect:active
+xml
+	<?xml version="1.0" encoding="utf-8"?>
