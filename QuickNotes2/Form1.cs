@@ -233,14 +233,14 @@ namespace QuickNotes2
                         savePath = Saves + "\\Untitled" + saveNum;
                     }
 
-                    File.WriteAllText(Saves + "\\" + savePath, Doc.Text);
+                    File.WriteAllText(savePath, Doc.Text);
 
                     //update load/delete options
 
-                    if (!LoadBox.Items.Contains(TitleBox.Text))
+                    if (!LoadBox.Items.Contains("Untitled" + saveNum))
                     {
-                        LoadBox.Items.Add(TitleBox.Text);
-                        DeleteBox.Items.Add(TitleBox.Text);
+                        LoadBox.Items.Add("Untitled" + saveNum);
+                        DeleteBox.Items.Add("Untitled" + saveNum);
                     }
                 }
             }

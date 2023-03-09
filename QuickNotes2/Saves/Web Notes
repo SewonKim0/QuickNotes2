@@ -1,21 +1,28 @@
-Internet: Network of computer networks
-	Centralized, decentralized, distributed
+Internet: Worldwide network of computer networks
+		Centralized, decentralized, distributed
 	Packet switching: split data, reassemble at endpt
+
+	Computer network: Group of interconnected devices
+	Network Provider: Physical struct of connection
 	Router: Networking device, relays data packets
 		Internet protocol(IP): Address to send data
-	Net Neutrality: Same access to all
-Web: Portion of internet (http, https)
-Cloud: Clusters of servers
-Digital Media: Binary sent through network
+	Net Neutrality: Same rights to all content
+		Accessibility, Open source
+Web: Built on top of internet (http, https)
+	Cloud: Clusters of servers
+Digital Media: Binary sent through network (+5v / -5v)
+	Connection measured in megabits/sec (Mb)
 	html, css, js, SVG, WOFF
 
-Operating System: Software to manage computer's resources, allocate memory, IO, connections
+Operating System: Software to manage computer's resources, allocate resources to programs, (CPU, memory, IO, file, connection) terminates only when computer is off
 	GUI vs CLI (cmd line interface)
-Unix: ls, pwd, cd <newDir>
+Unix: open source OS by AT&T bell labs
+ls, pwd, cd <newDir>
 	ls -l -a, cp <file> <dest>, rm <file>, open
-	chmod <permcode> <file>
+	chmod <permcode> <file> (644) (755)
 		r, w, x, - | u, g, o
 	pico <file>, nano
+FTP Client: Computer -> Server
 
 html (hypertext markup lang)
 	<html lang="en"> <meta charset="utf-8"> <!-- Comment -->
@@ -37,7 +44,10 @@ css3 (cascading style sheets)
 	<link rel="stylesheet" href="<cssfile>">	<style> css </style>
 	style="property:value;"	
 
-	 Inheritance, Specificity, Location
+	 Inheritance: Inherit from parent
+	Specificity: Type < Class < Id < Inline
+	Location: Later in line
+
 	Display: Inline, block, flex, inline-flex
 		flex-direction, justify-content, align-items
 	Position: Static, abs, rel, fixed, sticky
@@ -49,7 +59,15 @@ css3 (cascading style sheets)
 	Color: rgb(0, 0, 0), #hex, hsl(hue, sat%, light%)
 	Font: font-family, font-size
 
-Raster Graphics (jpg, png, gif, webp, avif)
+	selector {
+		Declaration block(property: value;)
+	}
+
+Raster (bitmap) Graphics (jpg, png, gif, webp, avif)
+	jpeg: Joint photographic experts group
+	png: Portable network graphics
+	gif: Graphic interchange format
+		Binary file
 	<img srcset=img1 480w, img2 1.5x>
 
 	<picture>
@@ -58,6 +76,8 @@ Raster Graphics (jpg, png, gif, webp, avif)
 
 Vector Graphics (XML extensive markup lang) .svg
 	No resolutions (scalable), rasterized client side, custom tags
+	<svg version="1.1" width height xm1ns="http://www.w3.org/2000/svg">
+		Allows vector graphics shapes, images, text
 	<svg viewBox="x1 y1 x2 y2">
 		<rect x="x1" y="y1" width height fill opacity />
 		<circle cx cy r fill opacity />
@@ -74,9 +94,18 @@ Vector Graphics (XML extensive markup lang) .svg
 			</defs>
 		</g>
 			fill="url(#id)" //apply gradient
-		</g>
 	<img src="svgPath">
 	or paste svg code into <body>
 		css: rect:hover, rect:active
-xml
+
+	<path d="cmds">
+			Uppercase: Abs, Lowercase: Rel
+		M(move) L(line) H V
+		C(curve) S(smoothCurve) Q(quadCurve)
+		T A Z(close)
+	
+		M x y, H yTo, V xTo, L xTo yTo
+		C hx1 hy1 hx2 hy2 xTo yTo
+		z
+xml (extensible markup lang) to transport and store data
 	<?xml version="1.0" encoding="utf-8"?>
