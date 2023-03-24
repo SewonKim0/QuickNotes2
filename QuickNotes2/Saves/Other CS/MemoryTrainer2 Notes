@@ -1,0 +1,14 @@
+CSS Animation
+	@keyframes animName {
+		from ( opacity: 0; }
+		to { opacity: 1; }
+	}
+	animation-name: animName;
+	animation-duration: 1s;
+	animation-delay: 1s;
+	animation-fill-mode: forwards;
+CSS overlap
+	position: fixed;
+	z-index: 999;
+CSS formatting
+	width: 100vw; height: 100vh;

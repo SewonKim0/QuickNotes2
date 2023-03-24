@@ -1,0 +1,23 @@
+	Preplanning
+	Semantic sections
+	Eliminate instability, specify representations
+Array
+	Location Detection: Lengths
+	Iteration multi terminating: if statement check
+HM
+	arr(value -> index)
+dp(Inputs) -> Decisions -> Output
+	Elegance: if not in memo, add to memo -> return memo
+	Bottom-Up(reverseOrder): Decisions -> Memo
+		Memos: arr26, arr, grid, HM
+Graphs
+	Prev prevention, prevs[]
+
+	Breadth Search: Queue
+	Union Find: DFS fill
+
+
+
+
+
+

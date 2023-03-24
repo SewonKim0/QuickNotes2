@@ -1,0 +1,30 @@
+Random Access Memory (cells) as chip
+	Multiple RAMs form a memory
+		Static RAM (faster, lowStorage, more transistors): Cache mem
+		Dynamic RAM (slower, highStorage): Main mem, frame buffers
+	Random Access: Ability to directly go to pos
+	Volatile (SRAM & DRAM): Lose if powered off, Nonvolatile (ROM, PROM, EPROM, EEPROM)
+	ROM(read only mem): System bootstrapper, cant be changed
+
+	Bus(transportation wires): Needed for mem storage
+		CPU(register, ALU(logic gates), BusInterface) - I/O Bridge - Main Mem
+Magnetic Disk(nonvolatile): Physical manipulation markings on disk
+	Read at head (counter-clockwise rotation)
+	Move to pos: Rotate until reach
+		CPU waits for rotation, CPU interruption
+	SeekTime RotationalLatency
+
+	Solid State Disk (electron storage)
+		Flash translation layer
+		FlashMem(Blocks(Pages)): Read by page/block
+			Page can be written after block erased
+			Block wears out from 100000 writes
+Caching (smaller, faster, subset of the data) (cache hit, cache miss)
+	Request: Find by HM(buckets, modKey)
+	Save most recent copy blocks
+
+	Cache Miss: ColdMiss(empty), ConflictMiss(bucketTaken), CapacityMiss(overflow)
+Locality(proximity of memory)
+	arr: cols in row > rows of col
+Mem Hierarchy (Regs, caches, main mem, local disks, remote storage): Order of data checking
+Access Times (CPU, SRAM, DRAM, SSD, Disk)

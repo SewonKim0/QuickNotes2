@@ -1,0 +1,62 @@
+import time
+time.sleep(secs)
+
+currTime = time.strftime("%H:%M:%S.%f") -> str
+
+GUI
+	import tkinter as tk
+	root = tk.Tk()
+		label = tk.Label(parent, text=)
+		textbox = tk.Entry(parent, text=)
+			textbox.get()
+		button = tk.Button(parent, text="", command=eventFunc)
+		button.pack()
+	root.mainloop()
+
+	root.bind_all("eventName", eventFunc)
+	def eventFunc(event):
+Mouse/Keyboard Input
+	import pynput.mouse as mouse
+	import pynput.keyboard as keyboard
+	
+	listener = mouse.Listener(eventType=eventFunc)
+		listener.start()/listener.join(), listener.stop()
+	Mouse:
+		on_click(x, y, button, pressed)
+			button == mouse.Button.left
+			pressed #True: press, False: release
+	Keyboard:
+		on_press(key), on_release(key)
+			key = keyboard.Key.ctrl_l
+Multithreading
+	import threading
+	newThread = threading.Thread(target=funcName, args=())
+		newThread.start()
+
+Screen Box Input
+	import win32gui, import PIL.ImageGrab
+	
+	handle = win32gui.GetForegroundWindow()
+	title = win32gui.GetWindowText(handle)
+
+	rect = win32gui.GetWindowRect(handle)
+		-> (left, bottom, right. top)
+	cursorPos = win32gui.GetCursorPos();
+		-> (x, y)
+	image = PIL.ImageGrab.grab(bbox=rect)
+		-> PIL.Image .open(file) .save(dest)
+
+	image = Image.new("RGB", (width, height), color="white")
+		pixels = image.load()
+			pixels[x, y] -> (r, g, b)
+			width, height = img.size
+		image.putpixel((x, y), (r, g, b))
+			image.resize((width, height)), image.crop()
+		image.show()
+
+Tensorflow CharacterPosFind
+
+Mouse Output
+	import pyautogui
+	pyautogui.moveTo(x, y)
+
