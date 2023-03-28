@@ -1,0 +1,23 @@
+Webscraping: Analyze and extract data from html
+	Playwright: Find elements by locator for access
+		await page.getByText("text");
+			page.getByText(), page.getByLabel(), CSS locators
+
+	const val = await funcName()
+Playwright.chromium
+	chromium.launch({ headless: false }); -> running browser
+		browser.newPage() -> new page
+			page.setDefaultTimeout(secs)
+			page.goto("URL")
+
+			page.getByText() ->
+		browser.close()
+
+Javascript
+	Array Function: (args) => {}
+	Synchronous (line by line)
+	
+	async function funcName() {} //return promise
+		promiseName.then((arg) => {});
+		await asyncFunc() //return after done
+

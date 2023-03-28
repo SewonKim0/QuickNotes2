@@ -1,0 +1,31 @@
+Scoping
+	Global: Declared outside functions, access anywhere
+	Func Scope: var
+	Block Scope: let, const
+Hoisting: var and func DECLARATIONS get moved to top
+Prototypes
+Inheritance
+
+Function Nesting
+	Closure: Inner access outer vars
+varName = function(params) {};
+Empty Func: res = (params) => {};
+
+	Number.MAX_SAFE_INTEGER
+	Math.min(val1, val2)
+Data Types:
+	Prims: Number(int/float), String, Boolean
+		null: No obj value
+		undef: Not initialized
+	Objs:
+		Array: arr.length, arr.push(val)
+		Object: obj["key"] = val, val in obj, del obj["key"]
+Operators:
+	==(type coercion), ===(without coercion)
+		Type Coercion: Implicit conversion to expected type
+	typeof()?, instanceof()?
+Asynchronous
+	async funcName() {} -> promise //undef til ready
+		await asyncFunc()
+Document Model
+Error Handling

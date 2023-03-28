@@ -26,7 +26,8 @@ namespace QuickNotes2
         public Main()
         {
             InitializeComponent();
-            //(load delete) updates case insensitive
+            //trash bin system for deleteds
+            //path error: Colon in title
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -209,8 +210,13 @@ namespace QuickNotes2
 
         private void LoadBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //save
+            if (!TitleBox.Text.Equals(""))
+            {
+                Save();
+            }
+
             //validate input
-            
             if (!Directory.GetFiles(saves + currFolder).Contains(saves + currFolder + "\\" + LoadBox.Text))
             {
                 MessageBox.Show("Error: Invalid file name.");
@@ -220,13 +226,11 @@ namespace QuickNotes2
             OptionGroup.Visible = false;
 
             //load into doc
-
             Doc.Text = "";
             TitleBox.Text = LoadBox.Text;
             string[] lines = File.ReadAllText(saves + currFolder + "\\" + LoadBox.Text).Split('\n');
 
             //color coding
-
             foreach (string line in lines)
             {
                 if (line.Length >= 2 && line[0] == '\t' && line[1] == '\t')
@@ -473,6 +477,10 @@ namespace QuickNotes2
 
             if (res == DialogResult.Yes)
             {
+                //clear
+                TitleBox.Text = "";
+                Doc.Text = "";
+
                 //delete
                 Directory.Delete(saves + currFolder, true);
                 //update currFolder
@@ -533,6 +541,12 @@ namespace QuickNotes2
 
         private void FolderBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //save
+            if (!TitleBox.Text.Equals(""))
+            {
+                Save();
+            }
+
             string folderName = FolderBox.Text;
             //(Create New Folder) new group
                 //CreateGroup(reposition)
@@ -575,6 +589,10 @@ namespace QuickNotes2
                     //if root, do not provide rename and delete options
             if (folderName[0] == '.' && folderName[1] == '.')
             {
+                //clear doc
+                TitleBox.Text = "";
+                Doc.Text = "";
+                //update currFolder
                 currFolder = currFolder.Substring(0, currFolder.LastIndexOf('\\'));
 
                 //load
@@ -633,6 +651,11 @@ namespace QuickNotes2
             //Folder
             //update (load delete folder), change currPath
             //if parent is root, display ..(root)
+
+            //clear
+            TitleBox.Text = "";
+            Doc.Text = "";
+            //update currFolder
             string parentName = currFolder.Substring(currFolder.LastIndexOf('\\') + 1);
             currFolder = currFolder + "\\" + FolderBox.Text;
             //load
@@ -683,7 +706,7 @@ namespace QuickNotes2
             }
         }
 
-        private void SaveButton_Click(object sender, EventArgs e)
+        private void Save()
         {
             //if no title
             if (TitleBox.Text.Equals(""))
@@ -726,6 +749,11 @@ namespace QuickNotes2
             {
                 DeleteBox.Items.Add(TitleBox.Text);
             }
+        }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            Save();
 
             //reload
             int selectionIndex = Doc.SelectionStart;
@@ -752,6 +780,11 @@ namespace QuickNotes2
 
             Doc.SelectionStart = selectionIndex;
             Doc.ScrollToCaret();
+        }
+
+        private void OptionGroup_Enter(object sender, EventArgs e)
+        {
+            //
         }
     }
 }

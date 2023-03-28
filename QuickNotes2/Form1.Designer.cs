@@ -126,6 +126,7 @@
             this.OptionGroup.TabStop = false;
             this.OptionGroup.Text = "OptionGroup";
             this.OptionGroup.Visible = false;
+            this.OptionGroup.Enter += new System.EventHandler(this.OptionGroup_Enter);
             // 
             // PathLabel
             // 
@@ -283,6 +284,7 @@
             this.ForeColor = System.Drawing.Color.Black;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Main";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.TopMost = true;
             this.Load += new System.EventHandler(this.Main_Load);
             ((System.ComponentModel.ISupportInitialize)(this.FontSize)).EndInit();

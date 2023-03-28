@@ -28,3 +28,9 @@ Locality(proximity of memory)
 	arr: cols in row > rows of col
 Mem Hierarchy (Regs, caches, main mem, local disks, remote storage): Order of data checking
 Access Times (CPU, SRAM, DRAM, SSD, Disk)
+
+
+
+
+
+

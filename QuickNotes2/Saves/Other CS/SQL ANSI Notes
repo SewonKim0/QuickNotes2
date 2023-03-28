@@ -1,0 +1,54 @@
+Table(data: rows, properties: cols)
+	Data types: INTEGER, DATE
+		VARCHAR(charCount): string
+		DECIMAL(digitCount, decCount): float
+	Constraints: NOT NULL, UNIQUE, PRIMARY KEY
+		DEFAULT defaultVal
+Conditions: = != < <= >= > BETWEEN LIKE IN
+	AND, OR, NOT
+
+	//create empty table
+CREATE TABLE tableName (
+	col1 datatype constraints,
+	col2 datatype constraints,
+);
+
+	//insert a row
+INSERT INTO tableName (col1, col2)
+VALUES (val1, val2, ...);
+	//insert rows from table2
+INSERT INTO tableName (col1, col2)
+<Selection>
+	//modify row
+UPDATE tableName
+SET col1 = val1, col2 = val2
+WHERE condition; //(optional) false: dont update
+	//delete rows that are true
+DELETE FROM tableName
+WHERE condition;
+
+	//select
+SELECT column1, column2
+FROM tableName
+	//select all with condition (only select true rows)
+SELECT *
+FROM tableName
+WHERE condition;
+
+	//combined selection, rows combined by condition
+SELECT table1.col, table2.col
+FROM table1 JOIN table2
+ON attributeMatchCondition;
+	INNER JOIN: Only matches
+	LEFT JOIN: All left, right matches
+		Left: If not match, right values are null
+	RIGHT JOIN
+	FULL OUTER JOIN: All, nonmatch: null
+
+ORDER
+
+Functions
+	CONCAT(str, "")
+
+
+

@@ -1,0 +1,19 @@
+CPU (0.5 ns): (Decode instructions, Execute, readMem, writeMem)
+		CPU Hertz (cycle/sec)
+	Hard disk drive (5ms): Physical representation
+	RAM (main) mem (50 ns)
+	Cache mem (10ns): Transistors
+
+	Spatial Locality: Need for adjacent data
+	Temporal Locality: Close to data for some time
+Cache (Cache hit, Cache miss)
+	Stores a copy of RAM mem
+	Less blocks than RAM
+		HM storage: indices % bit
+			Tag(nonMod bits), block add (blockIndex), ValidationBit(valid1/outdated0), Content(4 bytes)
+
+		Request: Check at block add (tag, validationbit)
+			Hit: get data
+			Miss: get from RAM, update data
+		tag(bits), block add(bits), byte offset(bits)
+

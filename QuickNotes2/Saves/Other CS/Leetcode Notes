@@ -1,9 +1,12 @@
 	Preplanning
 	Semantic sections
 	Eliminate instability, specify representations
+		Error: Unconscious wrongVar
 Array
 	Location Detection: Lengths
 	Iteration multi terminating: if statement check
+	PrefixSum: for constant time sums
+	All Pairs: for i, pair with all after
 HM
 	arr(value -> index)
 dp(Inputs) -> Decisions -> Output
@@ -15,6 +18,9 @@ Graphs
 
 	Breadth Search: Queue
 	Union Find: DFS fill
+
+
+
 
 
 
