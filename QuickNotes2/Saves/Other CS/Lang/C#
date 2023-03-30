@@ -1,0 +1,4 @@
+int[,] grid = new int[4, 4];
+	grid[i, i1]
+	grid.GetLength(0) //rows
+	grid.GetLength(1) //cols

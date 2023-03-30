@@ -13,9 +13,10 @@ dp(Inputs) -> Decisions -> Output
 	Elegance: if not in memo, add to memo -> return memo
 	Bottom-Up(reverseOrder): Decisions -> Memo
 		Memos: arr26, arr, grid, HM
+	Sequential progression, binary search progression
+		Deletion: binary search(deleteLeft, deleteRight, curr)
 Graphs
-	Prev prevention, prevs[]
-
+		Prev prevention, prevs[]
 	Breadth Search: Queue
 	Union Find: DFS fill
 

@@ -27,7 +27,6 @@ namespace QuickNotes2
         {
             InitializeComponent();
             //trash bin system for deleteds
-            //path error: Colon in title
         }
 
         private void Main_Load(object sender, EventArgs e)
@@ -45,7 +44,17 @@ namespace QuickNotes2
 
             if (data.Length == 5)
             {
-                this.Location = new Point(int.Parse(data[0]), int.Parse(data[1]));
+                //screen bounds safety
+                int screenWidth = Screen.PrimaryScreen.WorkingArea.Width;
+                int screenHeight = Screen.PrimaryScreen.WorkingArea.Height;
+
+                int posX = int.Parse(data[0]);
+                int posY = int.Parse(data[1]);
+                posX = Math.Max(posX, 0);
+                posY = Math.Max(posY, 0);
+                posX = Math.Min(posX, screenWidth);
+                posY = Math.Min(posY, screenHeight);
+                this.Location = new Point(posX, posY);
                 this.Size = new Size(int.Parse(data[2]), int.Parse(data[3]));
 
                 FontSize.Value = int.Parse(data[4]);
@@ -151,6 +160,13 @@ namespace QuickNotes2
             //Save
             if (!TitleBox.Text.Equals(""))
             {
+                //check for colon
+                if (TitleBox.Text.Contains(':'))
+                {
+                    MessageBox.Show("Error: Cannot have colon in title");
+                    e.Cancel = true;
+                    return;
+                }
                 //save
                 File.WriteAllText(saves + currFolder + "\\" + TitleBox.Text, Doc.Text);
             }
@@ -374,6 +390,12 @@ namespace QuickNotes2
                     return;
                 }
             }
+            //check colon
+            if (folderName.Contains(':'))
+            {
+                MessageBox.Show("Error: Cannot have colon in title");
+                return;
+            }
 
             //create folder
             Directory.CreateDirectory(saves + currFolder + "\\" + folderName);
@@ -435,6 +457,12 @@ namespace QuickNotes2
                     MessageBox.Show("Error: A file with the same name already exists in the parent folder");
                     return;
                 }
+            }
+            //check for colon
+            if (folderName.Contains(':'))
+            {
+                MessageBox.Show("Error: Cannot have colon in title");
+                return;
             }
 
             //rename
@@ -712,6 +740,12 @@ namespace QuickNotes2
             if (TitleBox.Text.Equals(""))
             {
                 MessageBox.Show("Error: No title provided");
+                return;
+            }
+            //check for colon
+            if (TitleBox.Text.Contains(':'))
+            {
+                MessageBox.Show("Error: Cannot have colon in title");
                 return;
             }
             //if already exists as folder

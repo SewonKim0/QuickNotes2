@@ -10,10 +10,30 @@ Cache (Cache hit, Cache miss)
 	Stores a copy of RAM mem
 	Less blocks than RAM
 		HM storage: indices % bit
-			Tag(nonMod bits), block add (blockIndex), ValidationBit(valid1/outdated0), Content(4 bytes)
+			Tag(nonMod bits), index, ValidationBit (valid1/outdated0), Content(4 bytes)
 
-		Request: Check at block add (tag, validationbit)
-			Hit: get data
-			Miss: get from RAM, update data
-		tag(bits), block add(bits), byte offset(bits)
+		Request: (tag, index, byteOffset)
+		Check: go to index, check (tag, valid)
+			Hit: get byte
+			Miss: get from RAM, replace block
+	AMAT (avg mem access time) = hitTime + (missRate * missPenalty)
+		Cache Miss Categories
+			Compulsory: Slot empty
+			Capacity: Not enough to fit data
+			Conflict: Several blocks map to same
+
+		Direct Mapping: 1 way set
+		Multi-ways set Associative: Multi-block in sets
+			numSets = cacheSize / numWays
+			Ways To Replace: (random, stack, leastRecent, notRecent(R Bit = 1), willNotUsed)
+		More associative: Less conflict misses, more hitTime
+	Cache Write
+		Write hit: Edit in cache
+			Write through: also update RAM
+				Write Buffer: update on separate thread
+			Write back: update RAM when replaced
+				Dirty bit: (1: diff from RAM)
+		Write miss: Get from RAM, edit in cache
+			Write allocate: fetch from RAM, update both
+			No-Write allocate: Write to RAM
 
